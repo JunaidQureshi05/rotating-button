@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+:root {
+  --primary-color: black;
+  --secondary-color: lightgreen;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+  font-size: 45px;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Italianno', cursive;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 0.8s;
+}
+
+a:hover:before {
+  transform: rotate(0deg);
+}
